@@ -24,87 +24,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-//  bool isTicked = false;
   int totalScore = 0;
   int targetNumber = Random().nextInt(9);
-
-/*  Widget tickedTarget(bool isSelected) {
-    return isSelected
-        ? Container(
-            width: 80.0,
-            height: 80.0,
-            decoration: BoxDecoration(
-              color: Colors.green[50],
-              border: Border.all(color: Colors.green[300], width: 1.0),
-            ),
-            child: Icon(
-              Icons.check_circle_outline,
-              color: Colors.green,
-              size: 40.0,
-            ),
-          )
-        : Container(
-            width: 80.0,
-            height: 80.0,
-            decoration: BoxDecoration(
-              color: Colors.red[50],
-              border: Border.all(color: Colors.red[300], width: 1.0),
-            ),
-            child: Icon(
-              Icons.close,
-              color: Colors.red,
-              size: 40.0,
-            ),
-          );
-  }
-
-  Widget tickButton(bool isSelected) {
-    return isSelected
-        ? Container(
-            decoration: BoxDecoration(
-                border: Border.all(width: 2.0, color: Colors.greenAccent[100]),
-                color: Colors.green),
-            width: 80.0,
-            height: 80.0,
-            child: Icon(
-              Icons.check,
-              color: Colors.greenAccent[100],
-              size: 40.0,
-            ),
-          )
-        : Container(
-            decoration: BoxDecoration(
-                border: Border.all(width: 2.0, color: Colors.redAccent[100]),
-                color: Colors.redAccent),
-            width: 80.0,
-            height: 80.0,
-            child: Icon(
-              Icons.close,
-              color: Colors.redAccent[100],
-              size: 40.0,
-            ),
-          );
-  }
-
-  Widget tickDrag(bool isSelected) {
-    return isSelected
-        ? Container(
-            width: 50.0,
-            height: 50.0,
-            child: Icon(
-              Icons.check,
-              color: Colors.green,
-            ),
-          )
-        : Container(
-            width: 50.0,
-            height: 50.0,
-            child: Icon(
-              Icons.close,
-              color: Colors.redAccent[100],
-            ),
-          );
-  }*/
 
   Widget numberDrag(int i, double height, double width) {
     return SizedBox(
