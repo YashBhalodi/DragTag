@@ -25,7 +25,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int totalScore = 0;
-  int targetNumber = Random().nextInt(9);
+  int targetNumber = Random().nextInt(9)+1;
+  Color cardColor = Colors.blue[100];
 
   Widget numberDrag(int i, double height, double width) {
     return SizedBox(
@@ -77,14 +78,16 @@ class _MyHomePageState extends State<MyHomePage> {
           } else {
             setState(() {
               totalScore--;
+              cardColor = Colors.red[200];
             });
             return false;
           }
         },
         onAccept: (data) {
           setState(() {
-            targetNumber = Random().nextInt(9);
+            targetNumber = Random().nextInt(9)+1;
             totalScore++;
+            cardColor = Colors.green[200];
           });
         },
         builder: (context, List<int> candidateData, rejectedData) {
@@ -124,9 +127,10 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           Card(
             elevation: 10.0,
-            child: Container(
+            child: AnimatedContainer(duration: Duration(milliseconds: 500),curve: SawTooth(2),
               width: 200.0,
               height: 60.0,
+              color: cardColor,
               child: Center(
                 child: Text(
                   "Total Score: $totalScore.",
